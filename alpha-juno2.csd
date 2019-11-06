@@ -1,4 +1,4 @@
-/* 
+/*  bounds(0, 0, 0, 0)
   alpha-juno2.csd - Roland Alpha Juno-2 emulator with CSound / Cabbage
   
   This program is free software: you can redistribute it and/or modify
@@ -16,37 +16,38 @@
  */
  <Cabbage>  
 bounds(0, 0, 0, 0)
-form caption("Alpha Juno 2") size(800, 600), colour(26,26,26), pluginid("def1")
+form caption("Alpha Juno 2"), size(800, 600), colour(26,26,26), pluginid("def1")
 keyboard bounds(76, 472, 579, 122) 
 
-label bounds(580, 366, 80, 16) text("DCO RNG")
-combobox bounds(610, 382, 50, 21)     channel("dcorng") value(2) text("4", "8", "16", "32")
+label bounds(580, 366, 80, 16), text("DCO RNG")
+combobox bounds(610, 382, 50, 21) ,    channel("dcorng") value(2) text("4", "8", "16", "32")
 
-rslider bounds(60, 68, 48, 48) range(0, 127, 0, 1, 1) text("LFO RATE") channel("lforate")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(60, 128, 48, 48) range(0, 127, 0, 1, 1) text("LFO DELY") channel("lfodely")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(60, 182, 48, 48) range(0, 127, 0, 1, 1) channel("dcolfo") text("DCO LFO")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-label bounds(576, 268, 80, 16) text("DCO ENV")
-combobox bounds(578, 284, 80, 20) text("Normal", "Invert", "D-Norm", "D-Invert") value(1) channel("dcoenv")
-combobox bounds(480, 284, 80, 20) text("Normal", "Invert", "D-Norm", "D-Invert", "dyn")  value(1) channel("vcfenv")
-combobox bounds(388, 284, 80, 20) text("Normal", "GT", "D-Norm", "DGT")  value(1) channel("vcaenv")
-
-rslider bounds(598, 310, 48, 48) range(0, 127, 0, 1, 1) text("DCO ENV") channel("dcoenvd") trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(60, 68, 48, 48), range(0, 127, 0, 1, 1), text("LFO RATE") channel("lforate"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
+rslider bounds(60, 128, 48, 48), range(0, 127, 0, 1, 1), text("LFO DELY") channel("lfodely"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
+rslider bounds(60, 182, 48, 48), range(0, 127, 0, 1, 1), channel("dcolfo") text("DCO LFO"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71),outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
 
 
-combobox bounds(170, 232, 40, 22) channel("pulse")    text("00", "01", "02", "03") 
+label bounds(576, 268, 80, 16), text("DCO ENV")
+combobox bounds(578, 284, 80, 20), text("Normal", "Invert", "D-Norm", "D-Invert"), value(1) ,channel("dcoenv")
+combobox bounds(480, 284, 80, 20), text("Normal", "Invert", "D-Norm", "D-Invert", "dyn") , value(1) channel("vcfenv")
+combobox bounds(388, 284, 80, 20), text("Normal", "GT", "D-Norm", "DGT"),  value(1), channel("vcaenv")
+
+rslider bounds(598, 310, 48, 48), range(0, 127, 0, 1, 1), text("DCO ENV"), channel("dcoenvd"), trackercolour(200, 13, 13, 255) ,trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
 
 
-combobox bounds(230, 232, 40, 22) channel("sawtooth")    text("00", "01", "02", "03", "04", "05") 
+combobox bounds(170, 232, 40, 22), channel("pulse") ,   text("00", "01", "02", "03") 
 
 
-combobox bounds(290, 232, 40, 22) channel("sub")    text("00", "01", "02", "03", "04", "05") 
+combobox bounds(230, 232, 40, 22), channel("sawtooth") ,   text("00", "01", "02", "03", "04", "05") 
 
-label bounds(202, 274, 80, 16) text("SUB LVL") align("right")
-combobox bounds(290, 270, 40, 22) channel("sublevl")    text("0", "1", "2", "3") 
 
-label bounds(204, 300, 80, 16) text("NOIS LVL") align("right")
-combobox bounds(292, 298, 40, 22) channel("noislvl") text("0", "1", "2", "3") value(4)
+combobox bounds(290, 232, 40, 22), channel("sub"),    text("00", "01", "02", "03", "04", "05") 
 
+label bounds(202, 274, 80, 16), text("SUB LVL"), align("right")
+combobox bounds(290, 270, 40, 22) ,channel("sublevl"),    text("0", "1", "2", "3") 
+
+label bounds(204, 300, 80, 16) ,text("NOIS LVL"), align("right")
+combobox bounds(292, 298, 40, 22), channel("noislvl"), text("0", "1", "2", "3"), value(4)
 rslider bounds(70, 250, 48, 48) range(0, 127, 0, 1, 1) channel("pwpwm") text("PW/PWM")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
 rslider bounds(68, 308, 57, 48) range(0, 127, 0, 1, 1) channel("pwmrate") text("PWM RATE")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
 
@@ -91,6 +92,7 @@ rslider bounds(404, 308, 48, 48) range(0, 127, 0, 1, 1) channel("vcaenvd") text(
 
 vslider bounds(693, 349, 102, 150) range(1000, 20000, 1000, 1, 1) text("test") valuetextbox(1) channel("test")
 vslider bounds(690, 188, 103, 150) range(0.5, 2, 0.5, 1, 0.001) channel("test2") valuetextbox(1) text("reso modif")
+
 </Cabbage>
 <CsoundSynthesizer>
 <CsOptions>
@@ -208,65 +210,71 @@ givcffreq[] fillarray   11.528952, 11.747088, 11.965224, 12.18336, 12.401496, 12
                       
 
 
-// Env T1 values 0-127, formula used:  power(2,envt/10-8)
-gienvt1[] fillarray     0.004187, 0.004487, 0.004809, 0.005154, 0.005524, 0.005921, 0.006346, 0.006801, 0.007289, 0.007812, 
-                        0.008373, 0.008974, 0.009618, 0.010309, 0.011049, 0.011842, 0.012691, 0.013602, 0.014579, 0.015625, 
-                        0.016746, 0.017948, 0.019237, 0.020617, 0.022097, 0.023683, 0.025383, 0.027205, 0.029157, 0.031250, 
-                        0.033493, 0.035897, 0.038473, 0.041235, 0.044194, 0.047366, 0.050766, 0.054409, 0.058315, 0.062500, 
-                        0.066986, 0.071794, 0.076947, 0.082469, 0.088388, 0.094732, 0.101532, 0.108819, 0.116629, 0.125000, 
-                        0.133972, 0.143587, 0.153893, 0.164938, 0.176777, 0.189465, 0.203063, 0.217638, 0.233258, 0.250000, 
-                        0.267943, 0.287175, 0.307786, 0.329877, 0.353553, 0.378929, 0.406126, 0.435275, 0.466516, 0.500000, 
-                        0.535887, 0.574349, 0.615572, 0.659754, 0.707107, 0.757858, 0.812252, 0.870551, 0.933033, 1.000000, 
-                        1.071773, 1.148698, 1.231144, 1.319508, 1.414214, 1.515717, 1.624505, 1.741101, 1.866066, 2.000000, 
-                        2.143547, 2.297397, 2.462289, 2.639016, 2.828427, 3.031433, 3.249010, 3.482202, 3.732132, 4.000000, 
-                        4.287094, 4.594793, 4.924578, 5.278032, 5.656854, 6.062866, 6.498019, 6.964405, 7.464264, 8.000000, 
-                        8.574188, 9.189587, 9.849155, 10.556063, 11.313709, 12.125733, 12.996038, 13.928809, 14.928528, 
-                        16.000000, 17.148375, 18.379174, 19.698311, 21.112127, 22.627417, 24.251465, 25.992077
+giFac = 1
+gienvt1[] fillarray     0.004187 * giFac, 0.004487 * giFac, 0.004809 * giFac, 0.005154 * giFac, 0.005524 * giFac, 0.005921 * giFac, 0.006346 * giFac, 0.006801 * giFac, 0.007289 * giFac, 0.007812 * giFac, 
+                        0.008373 * giFac, 0.008974 * giFac, 0.009618 * giFac, 0.010309 * giFac, 0.011049 * giFac, 0.011842 * giFac, 0.012691 * giFac, 0.013602 * giFac, 0.014579 * giFac, 0.015625 * giFac, 
+                        0.016746 * giFac, 0.017948 * giFac, 0.019237 * giFac, 0.020617 * giFac, 0.022097 * giFac, 0.023683 * giFac, 0.025383 * giFac, 0.027205 * giFac, 0.029157 * giFac, 0.031250 * giFac, 
+                        0.033493 * giFac, 0.035897 * giFac, 0.038473 * giFac, 0.041235 * giFac, 0.044194 * giFac, 0.047366 * giFac, 0.050766 * giFac, 0.054409 * giFac, 0.058315 * giFac, 0.062500 * giFac, 
+                        0.066986 * giFac, 0.071794 * giFac, 0.076947 * giFac, 0.082469 * giFac, 0.088388 * giFac, 0.094732 * giFac, 0.101532 * giFac, 0.108819 * giFac, 0.116629 * giFac, 0.125000 * giFac, 
+                        0.133972 * giFac, 0.143587 * giFac, 0.153893 * giFac, 0.164938 * giFac, 0.176777 * giFac, 0.189465 * giFac, 0.203063 * giFac, 0.217638 * giFac, 0.233258 * giFac, 0.250000 * giFac, 
+                        0.267943 * giFac, 0.287175 * giFac, 0.307786 * giFac, 0.329877 * giFac, 0.353553 * giFac, 0.378929 * giFac, 0.406126 * giFac, 0.435275 * giFac, 0.466516 * giFac, 0.500000 * giFac, 
+                        0.535887 * giFac, 0.574349 * giFac, 0.615572 * giFac, 0.659754 * giFac, 0.707107 * giFac, 0.757858 * giFac, 0.812252 * giFac, 0.870551 * giFac, 0.933033 * giFac, 1.000000 * giFac, 
+                        1.071773 * giFac, 1.148698 * giFac, 1.231144 * giFac, 1.319508 * giFac, 1.414214 * giFac, 1.515717 * giFac, 1.624505 * giFac, 1.741101 * giFac, 1.866066 * giFac, 2.000000 * giFac, 
+                        2.143547 * giFac, 2.297397 * giFac, 2.462289 * giFac, 2.639016 * giFac, 2.828427 * giFac, 3.031433 * giFac, 3.249010 * giFac, 3.482202 * giFac, 3.732132 * giFac, 4.000000 * giFac, 
+                        4.287094 * giFac, 4.594793 * giFac, 4.924578 * giFac, 5.278032 * giFac, 5.656854 * giFac, 6.062866 * giFac, 6.498019 * giFac, 6.964405 * giFac, 7.464264 * giFac, 8.000000 * giFac, 
+                        8.574188 * giFac, 9.189587 * giFac, 9.849155 * giFac, 10.556063 * giFac, 11.313709 * giFac, 12.125733 * giFac, 12.996038 * giFac, 13.928809 * giFac, 14.928528 * giFac, 
+                        16.000000 * giFac, 17.148375 * giFac, 18.379174 * giFac, 19.698311 * giFac, 21.112127 * giFac, 22.627417 * giFac, 24.251465 * giFac, 25.992077
 
 // env T3
-gienvt3[] fillarray     0.090000, 0.097000, 0.104000, 0.111000, 0.118000, 0.125000, 0.132000, 0.139000, 
-                        0.146000, 0.153000, 0.160000, 0.164000, 0.168000, 0.172000, 0.176000, 0.180000, 
-                        0.184000, 0.188000, 0.192000, 0.196000, 0.200000, 0.205000, 0.210000, 0.215000, 
-                        0.220000, 0.225000, 0.230000, 0.235000, 0.240000, 0.245000, 0.250000, 0.258000, 
-                        0.266000, 0.274000, 0.282000, 0.290000, 0.298000, 0.306000, 0.314000, 0.322000, 
-                        0.330000, 0.348000, 0.366000, 0.384000, 0.402000, 0.420000, 0.438000, 0.456000, 
-                        0.474000, 0.492000, 0.510000, 0.539000, 0.568000, 0.597000, 0.626000, 0.655000, 
-                        0.684000, 0.713000, 0.742000, 0.771000, 0.800000, 0.858000, 0.916000, 0.974000, 
-                        1.032000, 1.090000, 1.148000, 1.206000, 1.264000, 1.322000, 1.380000, 1.545000, 
-                        1.710000, 1.875000, 2.040000, 2.205000, 2.370000, 2.535000, 2.700000, 2.865000, 
-                        3.030000, 3.595000, 4.160000, 4.725000, 5.290000, 5.855000, 6.420000, 6.985000, 
-                        7.550000, 8.115000, 8.680000, 9.224000, 9.768000, 10.312000, 10.856000, 11.400000, 
-                        11.864000, 12.328000, 12.792000, 13.256000, 13.720000, 14.447500, 15.175000, 15.902500, 
-                        16.630000, 17.357500, 18.085000, 18.812500, 19.540000, 20.267500, 20.995000, 22.048500, 
-                        23.102000, 24.155500, 25.209000, 26.262500, 27.316000, 28.369500, 29.423000, 30.476500, 
-                        31.530000, 32.394286, 33.258571, 34.122857, 34.987143, 35.851429, 36.715714, 37.580000
+gienvt3[] fillarray     0.090000 * giFac, 0.097000 * giFac, 0.104000 * giFac, 0.111000 * giFac, 0.118000 * giFac, 0.125000 * giFac, 0.132000 * giFac, 0.139000 * giFac, 
+                        0.146000 * giFac, 0.153000 * giFac, 0.160000 * giFac, 0.164000 * giFac, 0.168000 * giFac, 0.172000 * giFac, 0.176000 * giFac, 0.180000 * giFac, 
+                        0.184000 * giFac, 0.188000 * giFac, 0.192000 * giFac, 0.196000 * giFac, 0.200000 * giFac, 0.205000 * giFac, 0.210000 * giFac, 0.215000 * giFac, 
+                        0.220000 * giFac, 0.225000 * giFac, 0.230000 * giFac, 0.235000 * giFac, 0.240000 * giFac, 0.245000 * giFac, 0.250000 * giFac, 0.258000 * giFac, 
+                        0.266000 * giFac, 0.274000 * giFac, 0.282000 * giFac, 0.290000 * giFac, 0.298000 * giFac, 0.306000 * giFac, 0.314000 * giFac, 0.322000 * giFac, 
+                        0.330000 * giFac, 0.348000 * giFac, 0.366000 * giFac, 0.384000 * giFac, 0.402000 * giFac, 0.420000 * giFac, 0.438000 * giFac, 0.456000 * giFac, 
+                        0.474000 * giFac, 0.492000 * giFac, 0.510000 * giFac, 0.539000 * giFac, 0.568000 * giFac, 0.597000 * giFac, 0.626000 * giFac, 0.655000 * giFac, 
+                        0.684000 * giFac, 0.713000 * giFac, 0.742000 * giFac, 0.771000 * giFac, 0.800000 * giFac, 0.858000 * giFac, 0.916000 * giFac, 0.974000 * giFac, 
+                        1.032000 * giFac, 1.090000 * giFac, 1.148000 * giFac, 1.206000 * giFac, 1.264000 * giFac, 1.322000 * giFac, 1.380000 * giFac, 1.545000 * giFac, 
+                        1.710000 * giFac, 1.875000 * giFac, 2.040000 * giFac, 2.205000 * giFac, 2.370000 * giFac, 2.535000 * giFac, 2.700000 * giFac, 2.865000 * giFac, 
+                        3.030000 * giFac, 3.595000 * giFac, 4.160000 * giFac, 4.725000 * giFac, 5.290000 * giFac, 5.855000 * giFac, 6.420000 * giFac, 6.985000 * giFac, 
+                        7.550000 * giFac, 8.115000 * giFac, 8.680000 * giFac, 9.224000 * giFac, 9.768000 * giFac, 10.312000 * giFac, 10.856000 * giFac, 11.400000 * giFac, 
+                        11.864000 * giFac, 12.328000 * giFac, 12.792000 * giFac, 13.256000 * giFac, 13.720000 * giFac, 14.447500 * giFac, 15.175000 * giFac, 15.902500 * giFac, 
+                        16.630000 * giFac, 17.357500 * giFac, 18.085000 * giFac, 18.812500 * giFac, 19.540000 * giFac, 20.267500 * giFac, 20.995000 * giFac, 22.048500 * giFac, 
+                        23.102000 * giFac, 24.155500 * giFac, 25.209000 * giFac, 26.262500 * giFac, 27.316000 * giFac, 28.369500 * giFac, 29.423000 * giFac, 30.476500 * giFac, 
+                        31.530000 * giFac, 32.394286 * giFac, 33.258571 * giFac, 34.122857 * giFac, 34.987143 * giFac, 35.851429 * giFac, 36.715714 * giFac, 37.580000
 
 
 
-// ent T3 values 0-127 
-gienvt4[] fillarray     0.007000, 0.009300, 0.011600, 0.013900, 0.016200, 0.018500, 0.020800, 0.023100, 
-                        0.025400, 0.027700, 0.030000, 0.034400, 0.038800, 0.043200, 0.047600, 0.052000, 
-                        0.056400, 0.060800, 0.065200, 0.069600, 0.074000, 0.083100, 0.092200, 0.101300, 
-                        0.110400, 0.119500, 0.128600, 0.137700, 0.146800, 0.155900, 0.165000, 0.184100, 
-                        0.203200, 0.222300, 0.241400, 0.260500, 0.279600, 0.298700, 0.317800, 0.336900, 
-                        0.356000, 0.394400, 0.432800, 0.471200, 0.509600, 0.548000, 0.586400, 0.624800, 
-                        0.663200, 0.701600, 0.740000, 0.808000, 0.876000, 0.944000, 1.012000, 1.080000, 
-                        1.148000, 1.216000, 1.284000, 1.352000, 1.420000, 1.541000, 1.662000, 1.783000, 
-                        1.904000, 2.025000, 2.146000, 2.267000, 2.388000, 2.509000, 2.630000, 2.887000, 
-                        3.144000, 3.401000, 3.658000, 3.915000, 4.172000, 4.429000, 4.686000, 4.943000, 
-                        5.200000, 5.520000, 5.840000, 6.160000, 6.480000, 6.800000, 7.120000, 7.440000, 
-                        7.760000, 8.080000, 8.400000, 8.909000, 9.418000, 9.927000, 10.436000, 10.945000, 
-                        11.454000, 11.963000, 12.472000, 12.981000, 13.490000, 14.243000, 14.996000, 15.749000, 
-                        16.502000, 17.255000, 18.008000, 18.761000, 19.514000, 20.267000, 21.020000, 22.101000, 
-                        23.182000, 24.263000, 25.344000, 26.425000, 27.506000, 28.587000, 29.668000, 30.749000, 
-                        31.830000, 32.902857, 33.975714, 35.048571, 36.121429, 37.194286, 38.267143, 39.340000
+// ent T4 values 0-127 
+gienvt4[] fillarray     0.007000 * giFac, 0.009300 * giFac, 0.011600 * giFac, 0.013900 * giFac, 0.016200 * giFac, 0.018500 * giFac, 0.020800 * giFac, 0.023100 * giFac, 
+                        0.025400 * giFac, 0.027700 * giFac, 0.030000 * giFac, 0.034400 * giFac, 0.038800 * giFac, 0.043200 * giFac, 0.047600 * giFac, 0.052000 * giFac, 
+                        0.056400 * giFac, 0.060800 * giFac, 0.065200 * giFac, 0.069600 * giFac, 0.074000 * giFac, 0.083100 * giFac, 0.092200 * giFac, 0.101300 * giFac, 
+                        0.110400 * giFac, 0.119500 * giFac, 0.128600 * giFac, 0.137700 * giFac, 0.146800 * giFac, 0.155900 * giFac, 0.165000 * giFac, 0.184100 * giFac, 
+                        0.203200 * giFac, 0.222300 * giFac, 0.241400 * giFac, 0.260500 * giFac, 0.279600 * giFac, 0.298700 * giFac, 0.317800 * giFac, 0.336900 * giFac, 
+                        0.356000 * giFac, 0.394400 * giFac, 0.432800 * giFac, 0.471200 * giFac, 0.509600 * giFac, 0.548000 * giFac, 0.586400 * giFac, 0.624800 * giFac, 
+                        0.663200 * giFac, 0.701600 * giFac, 0.740000 * giFac, 0.808000 * giFac, 0.876000 * giFac, 0.944000 * giFac, 1.012000 * giFac, 1.080000 * giFac, 
+                        1.148000 * giFac, 1.216000 * giFac, 1.284000 * giFac, 1.352000 * giFac, 1.420000 * giFac, 1.541000 * giFac, 1.662000 * giFac, 1.783000 * giFac, 
+                        1.904000 * giFac, 2.025000 * giFac, 2.146000 * giFac, 2.267000 * giFac, 2.388000 * giFac, 2.509000 * giFac, 2.630000 * giFac, 2.887000 * giFac, 
+                        3.144000 * giFac, 3.401000 * giFac, 3.658000 * giFac, 3.915000 * giFac, 4.172000 * giFac, 4.429000 * giFac, 4.686000 * giFac, 4.943000 * giFac, 
+                        5.200000 * giFac, 5.520000 * giFac, 5.840000 * giFac, 6.160000 * giFac, 6.480000 * giFac, 6.800000 * giFac, 7.120000 * giFac, 7.440000 * giFac, 
+                        7.760000 * giFac, 8.080000 * giFac, 8.400000 * giFac, 8.909000 * giFac, 9.418000 * giFac, 9.927000 * giFac, 10.436000 * giFac, 10.945000 * giFac, 
+                        11.454000 * giFac, 11.963000 * giFac, 12.472000 * giFac, 12.981000 * giFac, 13.490000 * giFac, 14.243000 * giFac, 14.996000 * giFac, 15.749000 * giFac, 
+                        16.502000 * giFac, 17.255000 * giFac, 18.008000 * giFac, 18.761000 * giFac, 19.514000 * giFac, 20.267000 * giFac, 21.020000 * giFac, 22.101000 * giFac, 
+                        23.182000 * giFac, 24.263000 * giFac, 25.344000 * giFac, 26.425000 * giFac, 27.506000 * giFac, 28.587000 * giFac, 29.668000 * giFac, 30.749000 * giFac, 
+                        31.830000 * giFac, 32.902857 * giFac, 33.975714 * giFac, 35.048571 * giFac, 36.121429 * giFac, 37.194286 * giFac, 38.267143 * giFac, 39.340000
 
 
+
+// dco env "a" value 
+gidcoenva[] fillarray  0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0.01475 ,0.015234375 ,0.01571875 ,0.016203125 ,0.0166875 ,0.017171875 ,0.01765625 ,0.018140625 ,0.018625 ,0.019109375 ,0.01959375 ,0.020078125 ,0.0205625 ,0.021046875 ,0.02153125 ,0.022015625 ,0.0225 ,0.023075 ,0.02365 ,0.024225 ,0.0248 ,0.025375 ,0.02595 ,0.026525 ,0.0271 ,0.027675 ,0.02825 ,0.028995 ,0.02974 ,0.030485 ,0.03123 ,0.031975 ,0.03272 ,0.033465 ,0.03421 ,0.034955 ,0.0357 ,0.03665 ,0.0376 ,0.03855 ,0.0395 ,0.04045 ,0.0414 ,0.04235 ,0.0433 ,0.04425 ,0.0452 ,0.04620105882 ,0.04720211765 ,0.04820317647 ,0.04920423529 ,0.05020529412 ,0.05120635294 ,0.05220741176 ,0.05320847059 ,0.05420952941 ,0.05521058824 ,0.05621164706 ,0.05721270588 ,0.05821376471 ,0.05921482353 ,0.06021588235 ,0.06121694118 ,0.062218 
+
+// dco env "b" value                                              
+gidcoenvb[] fillarray  0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,2.132 ,2.1325625 ,2.133125 ,2.1336875 ,2.13425 ,2.1348125 ,2.135375 ,2.1359375 ,2.1365 ,2.1370625 ,2.137625 ,2.1381875 ,2.13875 ,2.1393125 ,2.139875 ,2.1404375 ,2.141 ,2.14082 ,2.14064 ,2.14046 ,2.14028 ,2.1401 ,2.13992 ,2.13974 ,2.13956 ,2.13938 ,2.1392 ,2.14048 ,2.14176 ,2.14304 ,2.14432 ,2.1456 ,2.14688 ,2.14816 ,2.14944 ,2.15072 ,2.152 ,2.1533 ,2.1546 ,2.1559 ,2.1572 ,2.1585 ,2.1598 ,2.1611 ,2.1624 ,2.1637 ,2.165 ,2.165832153 ,2.166664307 ,2.16749646 ,2.168328613 ,2.169160766 ,2.16999292 ,2.170825073 ,2.171657226 ,2.172489379 ,2.173321533 ,2.174153686 ,2.174985839 ,2.175817992 ,2.176650146 ,2.177482299 ,2.178314452 ,2.179146605
 
 
 
 // amplitude for oscillation
-giAmp = 0.4 
+giAmp = 0.2
 
 // Amplitude of pwm oscilation as a ratio
 gipwmAmp = 0.375
@@ -297,7 +305,7 @@ iNoisLvl         = iNoisLvl - 1
 iPwmRate        chnget "pwmrate"
 iDcoRng         chnget "dcorng"
 iDcoLfo         chnget "dcolfo"
-iDcoEnvD        chnget "dcoenvd"
+iDcoEnvd        chnget "dcoenvd"
 iDcoEnM         chnget "dcoenv"    
 iHpfFreq        chnget "hpffreq" 
 iHpfFreq        = iHpfFreq - 1
@@ -305,6 +313,7 @@ iVcfFreq        chnget "vcffreq"
 iVcfReso        chnget "vcfreso" 
 iVcfEnvd        chnget "vcfenvd" 
 iVcfEnv         chnget "vcfenv" 
+iVcfLfo         chnget "vcflfo" 
 iVcaEnvd        chnget "vcaenvd" 
 iVcaEnv         chnget "vcaenv" 
 iEnvT1          chnget "envt1"
@@ -317,12 +326,28 @@ iEnvL3          chnget "envl3"
 giAmp           chnget "volume"
 
 
-itest   chnget  "test"
-itest2   chnget  "test2"
 
 
-printf_i "itest: %f\n", 1,itest
+// ----------------------------------------------------------------------------------------------------------------
+// Envelopes 
+// ----------------------------------------------------------------------------------------------------------------
+//if (iEnvL1 > iEnvL2) then 
+    kEnvL linsegr  0, gienvt1[iEnvT1], iEnvL1/127, gienvt1[iEnvT2], iEnvL2/127, gienvt3[iEnvT3], iEnvL3/127, gienvt4[iEnvT4],0
+    kEnvVCF linsegr  0, gienvt1[iEnvT1], iEnvL1, gienvt1[iEnvT2], iEnvL2 , gienvt3[iEnvT3], iEnvL3, gienvt4[iEnvT4],0
+    kEnvG  linsegr 0, 0.0001, 1,0,0
+//else
+// kres linsegr ia, idur1, ib [, idur2] [, ic] [...], irel, iz
+//    kEnvL linsegr 0, gienvt1[iEnvT1], iEnvL1/127, gienvt1[iEnvT2], iEnvL2/127, gienvt3[iEnvT3], iEnvL3/127, gienvt4[iEnvT4],0
+//    kEnvVCF  linsegr 0, gienvt1[iEnvT1], iEnvL1, gienvt1[iEnvT2], iEnvL2, gienvt3[iEnvT3], iEnvL3, gienvt4[iEnvT4],0
+//endif 
 
+
+/*kMainL linsegr  0, gienvt1[iEnvT1], iEnvL1, gienvt1[iEnvT2], iEnvL2/127, gienvt3[iEnvT3], iEnvL3/127, gienvt4[iEnvT4],0
+kMainE expsegr  0.001, gienvt1[iEnvT1], iEnvL1 + 0.001, gienvt1[iEnvT2], iEnvL2 + 0.001 , gienvt3[iEnvT3], iEnvL3 + 0.001, gienvt4[iEnvT4],0.001
+kMainLG linsegr  1, gienvt1[iEnvT1] + gienvt1[iEnvT2], 1, 0, 0, gienvt3[iEnvT3], 0, gienvt4[iEnvT4],0
+*/
+
+//printf_i "iVcaEnvd:%d     \n",1,iVcaEnvd 
 
 
 
@@ -349,15 +374,23 @@ else
     kLfoPw = kpwpwm                                                     // Basicely No LFO PWM
 endif 
 
-printf_i "iLfoDely:%d    iLfoRate:%d  gilfodels:%f    gilforate:%f \n",1,iLfoDely, iLfoRate, gilfodels[iLfoDely], gilforate[86]
 
 
 // ----------------------------------------------------------------------------------------------------------------
 ; DCO Block
 // ----------------------------------------------------------------------------------------------------------------
 
+//printf_i "iDcoEnvd :%d   , gidcoenvb[iDcoEnvd]:%f  idcoenva[iDcoEnvd] :%f \n",1,iDcoEnvd,gidcoenvb[iDcoEnvd],gidcoenva[iDcoEnvd] 
+
+// Note
 kNote           = p4 * (8  / (2^(iDcoRng + 1)))                        // Base note calculation : note * dcoRng correction 
 kNote           = kNote  +  aLFO * (kNote * gilfovals[iDcoLfo] / 2)    // note + lfo oscilation
+//printf_i "note avant : %f ",1 , kNote 
+if (iDcoEnvd != 0) then  // enveloppe impact pitch : use kEnvVCF   and this formula : (note/130.9)*power(10, b[dcoenv] +a[dcoenv]*(vcfenv - 10)/10) - 130.9
+    kNote           = kNote + (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) - 130.9
+//    printf_i "note après : %f \n",1 , kNote 
+endif 
+
 
 //printf_i  ": kLfoPw %f,k kLFOPw : %f p5 %f kpwpwm : %d \n",1, kLfoPw  ,(kLfoPw)*1.99/127 ,p5,kpwpwm
 
@@ -391,14 +424,14 @@ else
     if (iSawtooth == 1) then
         aOsc2           = - aSaw1  
     elseif (iSawtooth  == 2) then
-        aSquare1x2      vco2  p5, p4*2,10     // note / 2  
+        aSquare1x2      vco2  p5, kNote*2,10     // note / 2  
         aSquare1x201    =   (-aSquare1x2  + 1) / 2    // Gate for Sawtooth waves 
         aOsc2           = (-aSaw1+1) * aSquare1x201    -1   
 
     elseif (iSawtooth == 3) then
         asquarepwm      vco2  p5, kNote * 2, 2 ,  0.5 - (kLfoPw)*0.49/127  
         aSquare1x201    =   (-asquarepwm + 1) / 2
-        aSaw1           vco2  p5, p4 ,0
+        aSaw1           vco2  p5, kNote ,0
         aOsc2           = (-aSaw1 + 1) * (aSquare1x201)        -1    // saw03
     
     elseif (iSawtooth == 4) then
@@ -478,17 +511,6 @@ elseif (iHpfFreq == 3) then
 endif
 
 
-// ----------------------------------------------------------------------------------------------------------------
-; VCF Block
-// ----------------------------------------------------------------------------------------------------------------
-;ares reson asaw, kcf, kbw
-;asig balance ares, asaw
-;     outs asig, asig
-
-// ares tbvcf asig, xfco, xres, kdist, kasym [, iskip]
-;aOutVCFBlock reson aOutHPFBlock, givcffreq[iVcfFreq], 20 
-
-
 
 
 
@@ -499,44 +521,30 @@ endif
 // ----------------------------------------------------------------------------------------------------------------
 
 ;printf_i "courbe : %f %f %f %f %f %f %f \n",1, gienvt1[iEnvT1], iEnvL1/127, gienvt1[iEnvT2]*(iEnvL1-iEnvL2)/127, iEnvL2/127, gienvt1[iEnvT3], iEnvL3/127, gienvt1[iEnvT4]
-if (iEnvL1 > iEnvL2) then 
-//    kEnvL linsegr 0, gienvt1[iEnvT1], iEnvL1/127, gienvt1[iEnvT2*(iEnvL1-iEnvL2)/127], iEnvL2/127, gienvt3[iEnvT3], iEnvL3/127, gienvt4[iEnvT4],0
-//    kEnvVCF linsegr 0, gienvt1[iEnvT1], iEnvL1, gienvt1[iEnvT2*(iEnvL1-iEnvL2)/127], iEnvL2, gienvt3[iEnvT3], iEnvL3, gienvt4[iEnvT4],0
-    
-    kEnvL linsegr 0, gienvt1[iEnvT1], iEnvL1/127, gienvt1[iEnvT2], iEnvL2/127, gienvt3[iEnvT3], iEnvL3/127, gienvt4[iEnvT4],0
-    kEnvVCF linsegr 0, gienvt1[iEnvT1], iEnvL1, gienvt1[iEnvT2], iEnvL2, gienvt3[iEnvT3], iEnvL3, gienvt4[iEnvT4],0
-    
-else
-    kEnvL linsegr 0, gienvt1[iEnvT1], iEnvL1/127, gienvt1[iEnvT2], iEnvL2/127, gienvt3[iEnvT3], iEnvL3/127, gienvt4[iEnvT4],0
-    kEnvVCF  linsegr 0, gienvt1[iEnvT1], iEnvL1/127, gienvt1[iEnvT2], iEnvL2/127, gienvt3[iEnvT3], iEnvL3/127, gienvt4[iEnvT4],0
-endif 
-
-printf_i "iVcaEnvd:%d     \n",1,iVcaEnvd 
 
 if (iVcaEnv == 1) then
     kEnv = kEnvL*2   // Normal
 elseif (iVcaEnv == 2) then
-    kEnv = 1   // GT
+    kEnv = kEnvG   // GT
 elseif (iVcaEnv  == 3) then 
     kEnv = kEnvL*2   // D-Normal  TODO : implement dynamic
 elseif (iVcaEnv == 4) then 
     kEnv = 1   // DGT  TODO : implement dynamic
 endif
 
-printf_i "iVcfFreq:%d     iVcfEnvd:%d   kEnv : %f\n",1,iVcfFreq,iVcfEnvd,kEnv
+printf_i "iVcfLfo:%d     \n", 1, iVcfLfo
 
 //aOutVCFBlock moogvcf aOutHPFBlock, givcffreq[min(iVcfFreq + iVcfEnvd * kEnv/8, 127)]*1.1 , iVcfReso/145
 
 if (iVcfEnv == 1) then       // Normal
-    aOutVCFBlock moogvcf aOutHPFBlock        , givcffreq[min(iVcfFreq + iVcfEnvd * kEnvVCF / 256, 127)] , iVcfReso/153
+    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[min(iVcfFreq + iVcfEnvd * kEnvVCF / 256, 127)] , iVcfReso/153
 elseif (iVcfEnv == 2) then   // Inverted
-    aOutVCFBlock moogvcf aOutHPFBlock        , givcffreq[min(iVcfFreq - iVcfEnvd * kEnvVCF / 256, 127)]    , iVcfReso/153
+    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[min(iVcfFreq - iVcfEnvd * kEnvVCF / 256, 127)]    , iVcfReso/153
 elseif (iVcfEnv == 3) then   // D-Norm
     // no dynamic for now
-    aOutVCFBlock moogvcf aOutHPFBlock        , givcffreq[min(iVcfFreq + iVcfEnvd * kEnvVCF / 256, 127)]   , iVcfReso/153
+    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[min(iVcfFreq + iVcfEnvd * kEnvVCF / 256, 127)]   , iVcfReso/153
 elseif (iVcfEnv == 4) then   // dyn
-    // not implemented yet
-    aOutVCFBlock moogvcf aOutHPFBlock        , givcffreq[min(iVcfFreq + iVcfEnvd * kEnvVCF / 256, 127)]    , iVcfReso/153
+    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[iVcfFreq]    , iVcfReso/153
 endif
 
 
