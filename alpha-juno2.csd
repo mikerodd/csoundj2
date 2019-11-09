@@ -443,6 +443,11 @@ endif
 kNote           = p4 * (8  / (2^(iDcoRng + 1)))                        // Base note calculation : note * dcoRng correction 
 kNote           = kNote  +  aLFO * (kNote * gilfovals[iDcoLfo] / 2)    // note + lfo oscilation
 if (iDcoEnvd != 0) then  // enveloppe impact pitch : use kEnvVCF   and this formula : (note/130.9)*power(10, b[dcoenv] +a[dcoenv]*(vcfenv - 10)/10) 
+
+    // TODO : fix dcoenv !
+    if (iDcoEnvd < 64) then
+        iDcoEnvd = 0
+    endif 
     if (iDcoEnv == 1) then    // Norm 
         kNote           = (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) 
     elseif (iDcoEnv == 2) then // Inv 
@@ -621,7 +626,17 @@ aoutPostFilter butterlp aOutVCFBlock , 9220
 // ----------------------------------------------------------------------------------------------------------------
 ; Output
 // ----------------------------------------------------------------------------------------------------------------
+/*
+// Test chorus
+kampTemp = 2/kNote 
+a2   lfo kampTemp , 0.4, 1                           // Rate for LFO 
 
+asig vdelay aoutPostFilter  , a2   , 120	;use the LFO to control delay time
+outs        (asig) * kEnv, (asig)  * kEnv 
+
+// rate : ok dereg : 0 depth 1 offset 0.1 width 1 mix 0.5 level 1
+a1,a2	StChorus	a1,a2,krate*octave(kdereg),kdepth*ktrem,aoffset,kwidth,kmix
+*/
 
 if (iChorus == 2) then 
     printf_i "Chorus ! \n",1
