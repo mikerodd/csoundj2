@@ -60,6 +60,7 @@ rslider bounds(534, 226, 32, 32) range(0, 127, 0, 1, 1) channel("envt2")  tracke
 rslider bounds(582, 226, 32, 32) range(0, 127, 0, 1, 1) channel("envt3")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
 rslider bounds(676, 226, 32, 32) range(0, 127, 0, 1, 1) channel("envt4")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
 rslider bounds(466, 392, 48, 48) range(0, 127, 0, 1, 1) channel("crsrate") text("CRS RATE") trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(642, 412, 48, 48) range(0, 127, 0, 1, 1) channel("vcflfo") text("VCF LFO") trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
 
 
 
@@ -445,17 +446,18 @@ kNote           = kNote  +  aLFO * (kNote * gilfovals[iDcoLfo] / 2)    // note +
 if (iDcoEnvd != 0) then  // enveloppe impact pitch : use kEnvVCF   and this formula : (note/130.9)*power(10, b[dcoenv] +a[dcoenv]*(vcfenv - 10)/10) 
 
     // TODO : fix dcoenv !
-    if (iDcoEnvd < 64) then
-        iDcoEnvd = 0
-    endif 
-    if (iDcoEnv == 1) then    // Norm 
-        kNote           = (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) 
-    elseif (iDcoEnv == 2) then // Inv 
-        kNote           = 2 * kNote - (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10)
-    elseif (iDcoEnv == 3) then // D-Norm 
-        kNote           = (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) 
-    elseif (iDcoEnv == 4) then // D-Inv 
-        kNote           = 2 * kNote - (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) 
+    if (iDcoEnvd >= 64) then
+        printf_i "TODO : fix this... %d\n", 1,iDcoEnvd
+    
+        if (iDcoEnv == 1) then    // Norm 
+            kNote           = (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) 
+        elseif (iDcoEnv == 2) then // Inv 
+            kNote           = 2 * kNote - (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10)
+        elseif (iDcoEnv == 3) then // D-Norm 
+            kNote           = (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) 
+        elseif (iDcoEnv == 4) then // D-Inv 
+            kNote           = 2 * kNote - (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) 
+        endif
     endif
 endif 
 
