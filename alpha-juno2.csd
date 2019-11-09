@@ -17,64 +17,56 @@
  <Cabbage>  
 bounds(0, 0, 0, 0)
 form caption("Alpha Juno 2"), size(800, 600), colour(26,26,26), pluginid("def1")
-keyboard bounds(76, 472, 579, 122) 
 
-label bounds(580, 366, 80, 16), text("DCO RNG")
-combobox bounds(610, 382, 50, 21) ,    channel("dcorng") value(2) text("4", "8", "16", "32")
+keyboard bounds(76, 472, 579, 122)  
 
-rslider bounds(60, 68, 48, 48), range(0, 127, 0, 1, 1), text("LFO RATE") channel("lforate"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
-rslider bounds(60, 128, 48, 48), range(0, 127, 0, 1, 1), text("LFO DELY") channel("lfodely"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
-rslider bounds(60, 182, 48, 48), range(0, 127, 0, 1, 1), channel("dcolfo") text("DCO LFO"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71),outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
-
-
-label bounds(576, 268, 80, 16), text("DCO ENV")
-combobox bounds(578, 284, 80, 20), text("Normal", "Invert", "D-Norm", "D-Invert"), value(1) ,channel("dcoenv")
-combobox bounds(480, 284, 80, 20), text("Normal", "Invert", "D-Norm", "D-Invert", "dyn") , value(1) channel("vcfenv")
-combobox bounds(388, 284, 80, 20), text("Normal", "GT", "D-Norm", "DGT"),  value(1), channel("vcaenv")
-
-rslider bounds(598, 310, 48, 48), range(0, 127, 0, 1, 1), text("DCO ENV"), channel("dcoenvd"), trackercolour(200, 13, 13, 255) ,trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
-
-
-combobox bounds(170, 232, 40, 22), channel("pulse") ,   text("00", "01", "02", "03") 
-
-
-combobox bounds(230, 232, 40, 22), channel("sawtooth") ,   text("00", "01", "02", "03", "04", "05") 
-
-
-combobox bounds(290, 232, 40, 22), channel("sub"),    text("00", "01", "02", "03", "04", "05") 
-
-label bounds(202, 274, 80, 16), text("SUB LVL"), align("right")
-combobox bounds(290, 270, 40, 22) ,channel("sublevl"),    text("0", "1", "2", "3") 
-
-label bounds(204, 300, 80, 16) ,text("NOIS LVL"), align("right")
-combobox bounds(292, 298, 40, 22), channel("noislvl"), text("0", "1", "2", "3"), value(4)
-rslider bounds(70, 250, 48, 48) range(0, 127, 0, 1, 1) channel("pwpwm") text("PW/PWM")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(68, 308, 57, 48) range(0, 127, 0, 1, 1) channel("pwmrate") text("PWM RATE")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-
-
-label bounds(196, 344, 80, 16) text("HPF FREQ") align("right")
-combobox bounds(284, 340, 40, 22) text("00", "01", "02", "03") channel("hpffreq") 
-
-rslider bounds(492, 404, 48, 48) range(0, 127, 127, 1, 1) channel("vcffreq") text("VCF FREQ")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(492, 356, 49, 48) range(0, 127, 0, 1, 1) channel("vcfreso") text("VCF RESO")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(492, 308, 48, 48) range(0, 127, 0, 1, 1) channel("vcfenvd")  text("VCF ENV")   trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-
-
-
-
-
-combobox bounds(174, 424, 149, 38), channel("combobox"), populate("*.snaps") channeltype("string") value("1") 
-
-image bounds(128, 50, 529, 175) file("imgs/j2panel.png")
+image bounds(228, 58, 529, 175) file("imgs/j2panel.png")
 image bounds(6, 6, 277, 44) file("imgs/j2Logo.png")
 
-rslider bounds(394, 218, 32, 32) range(0, 127, 0, 1, 1) channel("envt1")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(656, 84, 32, 32) range(0, 127, 0, 1, 1) channel("envl1")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(656, 116, 32, 32) range(0, 127, 0, 1, 1) channel("envl2")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(656, 150, 32, 32) range(0, 127, 0, 1, 1) channel("envl3")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(434, 218, 32, 32) range(0, 127, 0, 1, 1) channel("envt2")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(482, 218, 32, 32) range(0, 127, 0, 1, 1) channel("envt3")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(576, 218, 32, 32) range(0, 127, 0, 1, 1) channel("envt4")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+
+label bounds(302, 282, 80, 16), text("SUB LVL"), align("right")
+label bounds(304, 308, 80, 16) ,text("NOIS LVL"), align("right")
+label bounds(306, 338, 80, 16) text("HPF FREQ") align("right")
+label bounds(680, 374, 80, 16), text("DCO RNG")
+label bounds(676, 276, 80, 16), text("DCO ENV")
+
+combobox bounds(710, 390, 50, 21) ,    channel("dcorng") value(2) text("4", "8", "16", "32")
+combobox bounds(678, 292, 80, 20), text("Normal", "Invert", "D-Norm", "D-Invert"),  ,channel("dcoenv")
+combobox bounds(580, 292, 80, 20), text("Normal", "Invert", "D-Norm", "D-Invert", "dyn") ,  channel("vcfenv")
+combobox bounds(488, 292, 80, 20), text("Normal", "GT", "D-Norm", "DGT"),  , channel("vcaenv")
+combobox bounds(270, 240, 40, 22), channel("pulse") ,   text("00", "01", "02", "03") 
+combobox bounds(330, 240, 40, 22), channel("sawtooth") ,   text("00", "01", "02", "03", "04", "05") 
+combobox bounds(390, 240, 40, 22), channel("sub"),    text("00", "01", "02", "03", "04", "05") 
+combobox bounds(390, 278, 40, 22) ,channel("sublevl"),    text("0", "1", "2", "3") 
+combobox bounds(392, 306, 40, 22), channel("noislvl"), text("0", "1", "2", "3"), value(4)
+combobox bounds(392, 334, 40, 22) text("00", "01", "02", "03") channel("hpffreq") 
+combobox bounds(422, 394, 44, 20) text("Off", "On") channel("chorus") 
+combobox bounds(26, 232, 149, 38), channel("combobox"), populate("*.snaps"), channeltype("string"), value("P12-  JazzGuitar"), identchannel("GroupTones") 
+
+rslider bounds(320, 392, 48, 48), range(0, 127, 0, 1, 1), text("LFO RATE") channel("lforate"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
+rslider bounds(272, 392, 48, 48), range(0, 127, 0, 1, 1), text("LFO DELY") channel("lfodely"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
+rslider bounds(226, 392, 48, 48), range(0, 127, 0, 1, 1), channel("dcolfo") text("DCO LFO"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71),outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
+rslider bounds(698, 318, 48, 48), range(0, 127, 0, 1, 1), text("DCO ENV"), channel("dcoenvd"), trackercolour(200, 13, 13, 255) ,trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255) 
+rslider bounds(224, 298, 48, 48) range(0, 127, 0, 1, 1) channel("pwpwm") text("PW/PWM")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(220, 344, 57, 48) range(0, 127, 0, 1, 1) channel("pwmrate") text("PWM RATE")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(592, 412, 48, 48) range(0, 127, 127, 1, 1) channel("vcffreq") text("VCF FREQ")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(592, 364, 49, 48) range(0, 127, 0, 1, 1) channel("vcfreso") text("VCF RESO")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(592, 316, 48, 48) range(0, 127, 0, 1, 1) channel("vcfenvd")  text("VCF ENV")   trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(494, 226, 32, 32) range(0, 127, 0, 1, 1) channel("envt1")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(756, 92, 32, 32) range(0, 127, 0, 1, 1) channel("envl1")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(756, 124, 32, 32) range(0, 127, 0, 1, 1) channel("envl2")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(756, 158, 32, 32) range(0, 127, 0, 1, 1) channel("envl3")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(534, 226, 32, 32) range(0, 127, 0, 1, 1) channel("envt2")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(582, 226, 32, 32) range(0, 127, 0, 1, 1) channel("envt3")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(676, 226, 32, 32) range(0, 127, 0, 1, 1) channel("envt4")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(466, 392, 48, 48) range(0, 127, 0, 1, 1) channel("crsrate") text("CRS RATE") trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+
+
+
+
+
+
+
 
 
 
@@ -86,13 +78,25 @@ button bounds(76, 418, 51, 31) channel("OctUp") text("Normal", "Normal") radiogr
 
 label bounds(6, 382, 128, 16) text("OCT TRANSPOSE")
 
-label bounds(480, 268, 80, 16) text("VCF ENV")
-label bounds(386, 268, 80, 17) text("VCA ENV")
-rslider bounds(404, 308, 48, 48) range(0, 127, 0, 1, 1) channel("vcaenvd") text("VCA ENV")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+label bounds(580, 276, 80, 16) text("VCF ENV")
+label bounds(486, 276, 80, 17) text("VCA ENV")
+rslider bounds(504, 316, 48, 48) range(0, 127, 0, 1, 1) channel("vcaenvd") text("VCA ENV")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
 
-vslider bounds(693, 349, 102, 150) range(1000, 20000, 1000, 1, 1) text("test") valuetextbox(1) channel("test")
-vslider bounds(690, 188, 103, 150) range(0.5, 2, 0.5, 1, 0.001) channel("test2") valuetextbox(1) text("reso modif")
 
+
+
+label bounds(66, 86, 86, 19) text("Group") fontcolour(255, 0, 0, 255)
+button bounds(145, 95, 57, 2) colour:0(255, 0, 0, 255)  colour:1(255, 0, 0, 255) radiogroup("666")
+button bounds(15, 95, 57, 2) colour:0(255, 0, 0, 255) colour:1(255, 0, 0, 255) radiogroup("666")
+
+label bounds(5, 120, 73, 13) text("PRESET") 
+label bounds(76, 120, 73, 13) text("MEMORY")
+label bounds(148, 120, 73, 13) text("CARTIDGE")
+button bounds(34, 138, 19, 70) colour:0(118, 118, 118, 255) colour:1(255, 0, 0, 255) radiogroup("1") text("", "") channel("grpPreset") value(1)
+button bounds(102, 138, 19, 70) colour:0(118, 118, 118, 255) colour:1(255, 0, 0, 255) radiogroup("1") text("", "") channel("grpMemory")
+button bounds(170, 138, 19, 70) colour:0(118, 118, 118, 255) colour:1(255, 0, 0, 255) radiogroup("1") text("", "") channel("grpCartridge")
+
+label bounds(426, 376, 80, 16) text("CHORUS")
 </Cabbage>
 <CsoundSynthesizer>
 <CsOptions>
@@ -272,12 +276,52 @@ gidcoenva[] fillarray  0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,
 gidcoenvb[] fillarray  0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,2.132 ,2.1325625 ,2.133125 ,2.1336875 ,2.13425 ,2.1348125 ,2.135375 ,2.1359375 ,2.1365 ,2.1370625 ,2.137625 ,2.1381875 ,2.13875 ,2.1393125 ,2.139875 ,2.1404375 ,2.141 ,2.14082 ,2.14064 ,2.14046 ,2.14028 ,2.1401 ,2.13992 ,2.13974 ,2.13956 ,2.13938 ,2.1392 ,2.14048 ,2.14176 ,2.14304 ,2.14432 ,2.1456 ,2.14688 ,2.14816 ,2.14944 ,2.15072 ,2.152 ,2.1533 ,2.1546 ,2.1559 ,2.1572 ,2.1585 ,2.1598 ,2.1611 ,2.1624 ,2.1637 ,2.165 ,2.165832153 ,2.166664307 ,2.16749646 ,2.168328613 ,2.169160766 ,2.16999292 ,2.170825073 ,2.171657226 ,2.172489379 ,2.173321533 ,2.174153686 ,2.174985839 ,2.175817992 ,2.176650146 ,2.177482299 ,2.178314452 ,2.179146605
 
 
+gicrsrate[] fillarray  0, 0.004839651931 ,0.005965252815 ,0.007090853698 ,0.008216454581 ,0.009342055464 ,0.01046765635 ,0.01159325723 ,0.01271885811 ,
+                       0.013844459 ,0.01497005988 ,0.01609566076 ,0.01722126165 ,0.01834686253 ,0.01947246341 ,0.0205980643 ,0.02172366518 ,
+                       0.02284926606 ,0.02397486695 ,0.02510046783 ,0.02622606871 ,0.02809986472 ,0.02997366073 ,0.03184745673 ,0.03372125274 ,
+                       0.03559504874 ,0.03746884475 ,0.03934264076 ,0.04121643676 ,0.04309023277 ,0.04496402878 ,0.04868455277 ,0.05240507676 ,
+                       0.05612560075 ,0.05984612474 ,0.06356664874 ,0.06728717273 ,0.07100769672 ,0.07472822071 ,0.0784487447 ,0.08216926869 ,
+                       0.08742943077 ,0.09268959285 ,0.09794975493 ,0.103209917 ,0.1084700791 ,0.1137302412 ,0.1189904032 ,0.1242505653 ,
+                       0.1295107274 ,0.1347708895 ,0.1452746159 ,0.1557783423 ,0.1662820687 ,0.1767857951 ,0.1872895215 ,0.1977932479 ,
+                       0.2082969743 ,0.2188007007 ,0.2293044271 ,0.2398081535 ,0.2577736469 ,0.2757391402 ,0.2937046336 ,0.311670127 ,
+                       0.3296356204 ,0.3476011137 ,0.3655666071 ,0.3835321005 ,0.4014975939 ,0.4194630872 ,0.4552168562 ,0.4909706252 ,
+                       0.5267243942 ,0.5624781631 ,0.5982319321 ,0.6339857011 ,0.6697394701 ,0.7054932391 ,0.741247008 ,0.777000777 ,
+                       0.8356643357 ,0.8943278943 ,0.952991453 ,1.011655012 ,1.07031857 ,1.128982129 ,1.187645688 ,1.246309246 ,
+                       1.304972805 ,1.363636364 ,1.441941779 ,1.520247195 ,1.59855261 ,1.676858026 ,1.755163441 ,1.833468857 ,
+                       1.911774272 ,1.990079688 ,2.068385103 ,2.146690519 ,2.355053194 ,2.56341587 ,2.771778545 ,2.980141221 ,
+                       3.188503896 ,3.396866572 ,3.605229247 ,3.813591923 ,4.021954598 ,4.230317274 ,4.530177113 ,4.830036952 ,
+                       5.12989679 ,5.429756629 ,5.729616468 ,6.029476307 ,6.329336146 ,6.629195985 ,6.929055824 ,7.228915663 ,
+                       7.66141489 ,8.093914118 ,8.526413346 ,8.958912573 ,9.391411801 ,9.823911029 ,10.25641026 
+
+
 
 // amplitude for oscillation
 giAmp = 0.2
 
 // Amplitude of pwm oscilation as a ratio
 gipwmAmp = 0.375
+
+
+
+;Author: Iain McCurdy (2012)
+;http://iainmccurdy.org/csound.html
+opcode	StChorus,aa,aakkakk
+	ainL,ainR,krate,kdepth,aoffset,kwidth,kmix	xin			;READ IN INPUT ARGUMENTS
+	ilfoshape	ftgentmp	0, 0, 131072, 19, 1, 0.5, 0,  0.5	;POSITIVE DOMAIN ONLY SINE WAVE
+	kporttime	linseg	0,0.001,0.02					;RAMPING UP PORTAMENTO VARIABLE
+	kChoDepth	portk	kdepth*0.01, kporttime				;SMOOTH VARIABLE CHANGES WITH PORTK
+	aChoDepth	interp	kChoDepth					;INTERPOLATE TO CREATE A-RATE VERSION OF K-RATE VARIABLE
+	amodL 		osciliktp 	krate, ilfoshape, 0			;LEFT CHANNEL LFO
+	amodR 		osciliktp 	krate, ilfoshape, kwidth*0.5		;THE PHASE OF THE RIGHT CHANNEL LFO IS ADJUSTABLE
+	amodL		=		(amodL*aChoDepth)+aoffset			;RESCALE AND OFFSET LFO (LEFT CHANNEL)
+	amodR		=		(amodR*aChoDepth)+aoffset			;RESCALE AND OFFSET LFO (RIGHT CHANNEL)
+	aChoL		vdelay	ainL, amodL*1000, 1.2*1000			;CREATE VARYING DELAYED / CHORUSED SIGNAL (LEFT CHANNEL) 
+	aChoR		vdelay	ainR, amodR*1000, 1.2*1000			;CREATE VARYING DELAYED / CHORUSED SIGNAL (RIGHT CHANNEL)
+	aoutL		ntrpol 	ainL*0.6, aChoL*0.6, kmix			;MIX DRY AND WET SIGNAL (LEFT CHANNEL)
+	aoutR		ntrpol 	ainR*0.6, aChoR*0.6, kmix			;MIX DRY AND WET SIGNAL (RIGHT CHANNEL)
+			xout	aoutL * 2 ,aoutR * 2					;SEND AUDIO BACK TO CALLER INSTRUMENT
+endop
+
 
 
 // ----------------------------------------------------------------------------------------------------------------
@@ -306,7 +350,7 @@ iPwmRate        chnget "pwmrate"
 iDcoRng         chnget "dcorng"
 iDcoLfo         chnget "dcolfo"
 iDcoEnvd        chnget "dcoenvd"
-iDcoEnM         chnget "dcoenv"    
+iDcoEnv         chnget "dcoenv"    
 iHpfFreq        chnget "hpffreq" 
 iHpfFreq        = iHpfFreq - 1
 iVcfFreq        chnget "vcffreq" 
@@ -323,11 +367,24 @@ iEnvT4          chnget "envt4"
 iEnvL1          chnget "envl1"
 iEnvL2          chnget "envl2"
 iEnvL3          chnget "envl3"
+iChorus         chnget "chorus"
+iCrsRate        chnget "crsrate"
+
 giAmp           chnget "volume"
+giPreset       chnget "grpPreset"
+giMemory       chnget "grpMemory"
+giCartridge    chnget "grpCartridge"
 
 
-
-
+/*
+printf_i "P:%d M:%d C:%d\n", 1, giPreset       ,giMemory, giCartridge
+if (giPreset == 1) then
+    chnset "populate(\"*.snaps\", \"preset\")", "GroupTones"
+endif 
+if (giMemory == 1) then
+    chnset "populate(\"*.snaps\", \"memory\")", "GroupTones"
+endif 
+*/
 // ----------------------------------------------------------------------------------------------------------------
 // Envelopes 
 // ----------------------------------------------------------------------------------------------------------------
@@ -385,10 +442,16 @@ endif
 // Note
 kNote           = p4 * (8  / (2^(iDcoRng + 1)))                        // Base note calculation : note * dcoRng correction 
 kNote           = kNote  +  aLFO * (kNote * gilfovals[iDcoLfo] / 2)    // note + lfo oscilation
-//printf_i "note avant : %f ",1 , kNote 
-if (iDcoEnvd != 0) then  // enveloppe impact pitch : use kEnvVCF   and this formula : (note/130.9)*power(10, b[dcoenv] +a[dcoenv]*(vcfenv - 10)/10) - 130.9
-    kNote           = kNote + (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) - 130.9
-//    printf_i "note après : %f \n",1 , kNote 
+if (iDcoEnvd != 0) then  // enveloppe impact pitch : use kEnvVCF   and this formula : (note/130.9)*power(10, b[dcoenv] +a[dcoenv]*(vcfenv - 10)/10) 
+    if (iDcoEnv == 1) then    // Norm 
+        kNote           = (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) 
+    elseif (iDcoEnv == 2) then // Inv 
+        kNote           = 2 * kNote - (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10)
+    elseif (iDcoEnv == 3) then // D-Norm 
+        kNote           = (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) 
+    elseif (iDcoEnv == 4) then // D-Inv 
+        kNote           = 2 * kNote - (kNote/130.9) * pow(10,gidcoenvb[iDcoEnvd] + gidcoenva[iDcoEnvd]* ( kEnvVCF  - 10) / 10) 
+    endif
 endif 
 
 
@@ -409,7 +472,7 @@ else
         aOsc1   vco2  p5, kNote ,2,  0.5 - (kLfoPw)*0.49/127  
         aOsc1 = aOsc1  // + kLfoPw
     endif 
-    aOsc1 =  aOsc1 *(aOscTri + 6)/7     // the pulse wave is not really a square...
+    aOsc1 =  aOsc1 *(aOscTri + 3)/4     // the pulse wave is not really a square...
 endif 
 
 
@@ -558,11 +621,24 @@ aoutPostFilter butterlp aOutVCFBlock , 9220
 // ----------------------------------------------------------------------------------------------------------------
 ; Output
 // ----------------------------------------------------------------------------------------------------------------
-outs        aoutPostFilter  * kEnv, aoutPostFilter  * kEnv 
-// TEST 
-//outs        aOutVCFBlock , aOutVCFBlock 
+
+
+if (iChorus == 2) then 
+    printf_i "Chorus ! \n",1
+    krate = gicrsrate[iCrsRate]
+    aoffset = 0
+    ktrem	rspline	0,-1,0.1,0.5
+    ktrem	pow	2,ktrem
+    
+    aoutChorusL,aoutChorusR 	StChorus	aoutPostFilter  ,aoutPostFilter  , gicrsrate[iCrsRate], ktrem/2	, aoffset, 0.5, 0.5
+else
+    aoutChorusL = aoutPostFilter
+    aoutChorusR = aoutPostFilter
+endif 
+
+outs        aoutChorusL  * kEnv, aoutChorusR  * kEnv 
   
-  endin
+endin
   
   
 </CsInstruments>
@@ -573,4 +649,3 @@ f0 z
 
 </CsScore>
 </CsoundSynthesizer>
- 
