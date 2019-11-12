@@ -16,88 +16,121 @@
  */
  <Cabbage>  
 bounds(0, 0, 0, 0)
-form caption("Alpha Juno 2"), size(800, 600), colour(26,26,26), pluginid("def1")
+form caption("Alpha Juno 2"), size(750, 500), colour(26,26,26), pluginid("def1")
 
-keyboard bounds(76, 472, 579, 122)  
-
-image bounds(228, 58, 529, 175) file("imgs/j2panel.png")
-image bounds(6, 6, 277, 44) file("imgs/j2Logo.png")
+keyboard bounds(104, 376, 579, 122)  
 
 
-label bounds(302, 282, 80, 16), text("SUB LVL"), align("right")
-label bounds(304, 308, 80, 16) ,text("NOIS LVL"), align("right")
-label bounds(306, 338, 80, 16) text("HPF FREQ") align("right")
-label bounds(680, 374, 80, 16), text("DCO RNG")
-label bounds(676, 276, 80, 16), text("DCO ENV")
+image bounds(246, 6, 222, 177) file("imgs/j2panel-short.png") 
+image bounds(470, 6, 280, 177) file("imgs/j2panelenv.png")
+image bounds(2, 4, 44, 277) file("imgs/j2Logor.png")
+image bounds(474, 34, 266, 58) file("imgs/j2panelenv2.png")
 
-combobox bounds(710, 390, 50, 21) ,    channel("dcorng") value(2) text("4", "8", "16", "32")
-combobox bounds(678, 292, 80, 20), text("Normal", "Invert", "D-Norm", "D-Invert"),  ,channel("dcoenv")
-combobox bounds(580, 292, 80, 20), text("Normal", "Invert", "D-Norm", "D-Invert", "dyn") ,  channel("vcfenv")
-combobox bounds(488, 292, 80, 20), text("Normal", "GT", "D-Norm", "DGT"),  , channel("vcaenv")
-combobox bounds(270, 240, 40, 22), channel("pulse") ,   text("00", "01", "02", "03") 
-combobox bounds(330, 240, 40, 22), channel("sawtooth") ,   text("00", "01", "02", "03", "04", "05") 
-combobox bounds(390, 240, 40, 22), channel("sub"),    text("00", "01", "02", "03", "04", "05") 
-combobox bounds(390, 278, 40, 22) ,channel("sublevl"),    text("0", "1", "2", "3") 
-combobox bounds(392, 306, 40, 22), channel("noislvl"), text("0", "1", "2", "3"), value(4)
-combobox bounds(392, 334, 40, 22) text("00", "01", "02", "03") channel("hpffreq") 
-combobox bounds(422, 394, 44, 20) text("Off", "On") channel("chorus") 
-combobox bounds(26, 232, 149, 38), channel("combobox"), populate("*.snaps"), channeltype("string"), value("P12-  JazzGuitar"), identchannel("GroupTones") 
 
-rslider bounds(320, 392, 48, 48), range(0, 127, 0, 1, 1), text("LFO RATE") channel("lforate"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
-rslider bounds(272, 392, 48, 48), range(0, 127, 0, 1, 1), text("LFO DELY") channel("lfodely"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
-rslider bounds(226, 392, 48, 48), range(0, 127, 0, 1, 1), channel("dcolfo") text("DCO LFO"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71),outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
-rslider bounds(698, 318, 48, 48), range(0, 127, 0, 1, 1), text("DCO ENV"), channel("dcoenvd"), trackercolour(200, 13, 13, 255) ,trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255) 
-rslider bounds(224, 298, 48, 48) range(0, 127, 0, 1, 1) channel("pwpwm") text("PW/PWM")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(220, 344, 57, 48) range(0, 127, 0, 1, 1) channel("pwmrate") text("PWM RATE")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(592, 412, 48, 48) range(0, 127, 127, 1, 1) channel("vcffreq") text("VCF FREQ")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(592, 364, 49, 48) range(0, 127, 0, 1, 1) channel("vcfreso") text("VCF RESO")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(592, 316, 48, 48) range(0, 127, 0, 1, 1) channel("vcfenvd")  text("VCF ENV")   trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(494, 226, 32, 32) range(0, 127, 0, 1, 1) channel("envt1")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(756, 92, 32, 32) range(0, 127, 0, 1, 1) channel("envl1")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(756, 124, 32, 32) range(0, 127, 0, 1, 1) channel("envl2")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(756, 158, 32, 32) range(0, 127, 0, 1, 1) channel("envl3")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(534, 226, 32, 32) range(0, 127, 0, 1, 1) channel("envt2")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(582, 226, 32, 32) range(0, 127, 0, 1, 1) channel("envt3")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(676, 226, 32, 32) range(0, 127, 0, 1, 1) channel("envt4")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(466, 392, 48, 48) range(0, 127, 0, 1, 1) channel("crsrate") text("CRS RATE") trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-rslider bounds(642, 412, 48, 48) range(0, 127, 0, 1, 1) channel("vcflfo") text("VCF LFO") trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+label bounds(388, 190, 68, 16), text("SUB LVL"), 
+label bounds(268, 190, 73, 16) ,text("NOIS LVL"), 
+label bounds(264, 286, 80, 16) text("HPF FREQ") align("right")
+label bounds(476, 282, 80, 16), text("DCO RNG")
+label bounds(474, 190, 80, 16), text("DCO ENV")
+label bounds(100, 248, 128, 16) text("OCT TRANSPOSE")
+label bounds(664, 190, 80, 16) text("VCF ENV")
+label bounds(566, 190, 80, 17) text("VCA ENV")
+label bounds(382, 284, 80, 16) text("CHORUS")
 
 
 
+combobox bounds(492, 298, 48, 21) ,    channel("dcorng") value(2) text("4", "8", "16", "32")
+combobox bounds(474, 206, 80, 20), text("Normal", "Invert", "D-Norm", "D-Invert"),  ,channel("dcoenv")
+combobox bounds(664, 206, 80, 20), text("Normal", "Invert", "D-Norm", "D-Invert", "dyn") ,  channel("vcfenv")
+combobox bounds(566, 206, 80, 20), text("Normal", "GT", "D-Norm", "DGT"),  , channel("vcaenv")
+combobox bounds(398, 206, 48, 22) ,channel("sublevl"),    text("0", "1", "2", "3") 
+combobox bounds(280, 206, 48, 22), channel("noislvl"), text("0", "1", "2", "3"), value(4)
+combobox bounds(284, 302, 40, 22) text("00", "01", "02", "03") channel("hpffreq") 
+combobox bounds(400, 300, 44, 20) text("Off", "On") channel("chorus") 
+combobox bounds(66, 4, 153, 26), channel("combobox"), populate("*.snaps"), channeltype("string"), value("P12-  JazzGuitar"), identchannel("GroupTones") 
+
+rslider bounds(422, 226, 48, 48), range(0, 127, 0, 1, 1), text("LFO RATE") channel("lforate"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
+rslider bounds(374, 226, 48, 48), range(0, 127, 0, 1, 1), text("LFO DELY") channel("lfodely"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
+rslider bounds(492, 322, 48, 48), range(0, 127, 0, 1, 1), channel("dcolfo") text("DCO LFO"),  trackercolour(200, 13, 13, 255), trackerinsideradius(0.71),outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255)
+rslider bounds(492, 226, 48, 48), range(0, 127, 0, 1, 1), text("DCO ENV"), channel("dcoenvd"), trackercolour(200, 13, 13, 255) ,trackerinsideradius(0.71), outlinecolour(202, 25, 25, 255), markercolour(202, 25, 25, 255) 
+rslider bounds(256, 228, 48, 48) range(0, 127, 0, 1, 1) channel("pwpwm") text("PW/PWM")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(298, 228, 57, 48) range(0, 127, 0, 1, 1) channel("pwmrate") text("PWM RATE")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(700, 274, 48, 48) range(0, 127, 0, 1, 1) channel("vcffreq") text("VCF FREQ")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(652, 274, 49, 48) range(0, 127, 0, 1, 1) channel("vcfreso") text("VCF RESO")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(678, 226, 48, 48) range(0, 127, 0, 1, 1) channel("vcfenvd")  text("VCF ENV")   trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(470, 130, 48, 48) range(0, 127, 0, 1, 1) channel("envt1")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255) text("T1")
+rslider bounds(544, 130, 48, 48) range(0, 127, 0, 1, 1) channel("envt2")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255) text("T2")
+rslider bounds(620, 130, 48, 48) range(0, 127, 0, 1, 1) channel("envt3")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255) text("T3")
+rslider bounds(696, 130, 48, 48) range(0, 127, 0, 1, 1) channel("envt4")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255) text("T4")
+rslider bounds(400, 320, 48, 48) range(0, 127, 0, 1, 1) channel("crsrate") text("CRS RATE") trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(700, 322, 48, 48) range(0, 127, 0, 1, 1) channel("vcflfo") text("VCF LFO") trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(584, 226, 48, 48) range(0, 127, 0, 1, 1) channel("vcaenvd") text("VCA ENV")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(652, 322, 48, 48) range(0, 15, 0, 1, 1) channel("vcfkybd") text("VCF KYBD") trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+rslider bounds(586, 322, 48, 48) range(0, 127, 0, 1, 1) channel("envkybd") text("ENV KYBD") trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
+
+button bounds(112, 268, 51, 31) channel("OctDown") colour:1(255, 0, 0, 255) text("Down", "Down") radiogroup("oct")
+button bounds(168, 268, 51, 31) channel("OctUp") text("Normal", "Normal") radiogroup("oct") colour:1(255, 0, 0, 255)
+button bounds(278, 56, 60, 19) text("", "") imgfile("On", "imgs/sq_0_on.png") imgfile("Off", "imgs/sq_0_off.png") radiogroup("square") channel("pulse0")
+button bounds(278, 76, 60, 19) text("", "") imgfile("On", "imgs/sq_1_on.png") imgfile("Off", "imgs/sq_1_off.png") radiogroup("square") channel("pulse1")
+button bounds(278, 96, 60, 19) text("", "") imgfile("On", "imgs/sq_2_on.png") imgfile("Off", "imgs/sq_2_off.png") radiogroup("square") channel("pulse2")
+button bounds(278, 116, 60, 19) text("", "") imgfile("On", "imgs/sq_3_on.png") imgfile("Off", "imgs/sq_3_off.png") radiogroup("square") channel("pulse3")
+button bounds(338, 56, 60, 20) text("", "") imgfile("On", "imgs/tri_0_on.png") imgfile("Off", "imgs/tri_0_off.png") radiogroup("sawtooth") channel("sawtooth0")
+button bounds(338, 76, 60, 20) text("", "") imgfile("On", "imgs/tri_1_on.png") imgfile("Off", "imgs/tri_1_off.png") radiogroup("sawtooth") channel("sawtooth1")
+button bounds(338, 96, 60, 20) text("", "") imgfile("On", "imgs/tri_2_on.png") imgfile("Off", "imgs/tri_2_off.png") radiogroup("sawtooth") channel("sawtooth2")
+button bounds(338, 116, 60, 20) text("", "") imgfile("On", "imgs/tri_3_on.png") imgfile("Off", "imgs/tri_3_off.png") radiogroup("sawtooth") channel("sawtooth3")
+button bounds(338, 136, 60, 20) text("", "") imgfile("On", "imgs/tri_4_on.png") imgfile("Off", "imgs/tri_4_off.png") radiogroup("sawtooth") channel("sawtooth4")
+button bounds(338, 156, 60, 20) text("", "") imgfile("On", "imgs/tri_5_on.png") imgfile("Off", "imgs/tri_5_off.png") radiogroup("sawtooth") channel("sawtooth5")
+button bounds(398, 56, 66, 20) text("", "") imgfile("On", "imgs/sub_0_on.png") imgfile("Off", "imgs/sub_0_off.png") radiogroup("sub") channel("sub0")
+button bounds(398, 76, 66, 20) text("", "") imgfile("On", "imgs/sub_1_on.png") imgfile("Off", "imgs/sub_1_off.png") radiogroup("sub") channel("sub1")
+button bounds(398, 96, 66, 20) text("", "") imgfile("On", "imgs/sub_2_on.png") imgfile("Off", "imgs/sub_2_off.png") radiogroup("sub") channel("sub2")
+button bounds(398, 116, 66, 20) text("", "") imgfile("On", "imgs/sub_3_on.png") imgfile("Off", "imgs/sub_3_off.png") radiogroup("sub") channel("sub3")
+button bounds(398, 136, 66, 20) text("", "") imgfile("On", "imgs/sub_4_on.png") imgfile("Off", "imgs/sub_4_off.png") radiogroup("sub") channel("sub4")
+button bounds(398, 156, 66, 20) text("", "") imgfile("On", "imgs/sub_5_on.png") imgfile("Off", "imgs/sub_5_off.png") radiogroup("sub") channel("sub5")
+
+vslider bounds(52, 244, 40, 117) range(0, 1, 0.4, 1, 0.001) colour(149, 140, 140, 255) textboxoutlinecolour(0, 0, 0, 0) channel("volume") text("Volume") trackercolour(255, 0, 0, 255)
+vslider bounds(518, 93, 28, 85) range(0, 127, 0, 0.5, 1) trackercolour(255, 0, 0, 255) channel("envl1") text("L1")
+vslider bounds(592, 92, 28, 86) range(0, 127, 0, 1, 1) trackercolour(255, 0, 0, 255) channel("envl2") text("L2")
+vslider bounds(668, 91, 28, 87) range(0, 127, 0, 1, 1) trackercolour(255, 0, 0, 255) channel("envl3") text("L3")
 
 
+button bounds(72, 82, 19, 27) colour:0(118, 118, 118, 255) colour:1(255, 0, 0, 255) radiogroup("1") text("", "") channel("grpPreset") value(1) visible(0)
+button bounds(134, 82, 19, 25) colour:0(118, 118, 118, 255) colour:1(255, 0, 0, 255) radiogroup("1") text("", "") channel("grpMemory") visible(0)
+button bounds(194, 82, 19, 28) colour:0(118, 118, 118, 255) colour:1(255, 0, 0, 255) radiogroup("1") text("", "") channel("grpCartridge") visible(0)
+
+button bounds(176, 50, 45, 2) colour:0(255, 0, 0, 255)  colour:1(255, 0, 0, 255) radiogroup("666") visible(0)
+button bounds(60, 50, 45, 2) colour:0(255, 0, 0, 255) colour:1(255, 0, 0, 255) radiogroup("666") visible(0)
+button bounds(176, 124, 45, 2) colour:0(255, 0, 0, 255)  colour:1(255, 0, 0, 255) radiogroup("666") visible(0)
+button bounds(60, 124, 45, 2) colour:0(255, 0, 0, 255) colour:1(255, 0, 0, 255) radiogroup("666") visible(0)
+button bounds(176, 172, 45, 2) colour:0(255, 0, 0, 255)  colour:1(255, 0, 0, 255) radiogroup("666") visible(0)
+button bounds(60, 172, 45, 2) colour:0(255, 0, 0, 255) colour:1(255, 0, 0, 255) radiogroup("666")  visible(0)
+
+label bounds(98, 42, 86, 13) text("GROUP") fontcolour(255, 0, 0, 255) visible(0)
+label bounds(48, 64, 64, 13) text("PRESET") visible(0) visible(0)
+label bounds(112, 64, 64, 13) text("MEMORY") visible(0) visible(0)
+label bounds(176, 64, 64, 13) text("CARTIDGE") visible(0) visible(0)
+
+label bounds(98, 116, 86, 13) text("BANK") fontcolour(255, 0, 0, 255) visible(0)
+label bounds(98, 164, 86, 13) text("NUMBER") fontcolour(255, 0, 0, 255) visible(0)
+
+button bounds(56, 134, 20, 20)  colour:0(118, 118, 118, 255) text("1") colour:1(255, 0, 0, 255) channel("btb1") radiogroup("btbank") visible(0)
+button bounds(78, 134, 20, 20)  colour:0(118, 118, 118, 255) text("2") colour:1(255, 0, 0, 255) channel("btb2") radiogroup("btbank") visible(0)
+button bounds(100, 134, 20, 20) colour:0(118, 118, 118, 255) text("3") colour:1(255, 0, 0, 255) channel("btb3") radiogroup("btbank") visible(0)
+button bounds(122, 134, 20, 20) colour:0(118, 118, 118, 255) text("4") colour:1(255, 0, 0, 255) channel("btb4") radiogroup("btbank") visible(0)
+button bounds(144, 134, 20, 20) colour:0(118, 118, 118, 255) text("5") colour:1(255, 0, 0, 255) channel("btb5") radiogroup("btbank") visible(0)
+button bounds(166, 134, 20, 20) colour:0(118, 118, 118, 255) text("6") colour:1(255, 0, 0, 255) channel("btb6") radiogroup("btbank") visible(0)
+button bounds(188, 134, 20, 20) colour:0(118, 118, 118, 255) text("7") colour:1(255, 0, 0, 255) channel("btb7") radiogroup("btbank") visible(0)
+button bounds(210, 134, 20, 20) colour:0(118, 118, 118, 255) text("8") colour:1(255, 0, 0, 255) channel("btb8") radiogroup("btbank") visible(0)
+
+button bounds(56, 182, 20, 20)  colour:0(118, 118, 118, 255) text("1") colour:1(255, 0, 0, 255) channel("btn1") radiogroup("btnumber") visible(0)
+button bounds(78, 182, 20, 20)  colour:0(118, 118, 118, 255) text("2") colour:1(255, 0, 0, 255) channel("btn2") radiogroup("btnumber") visible(0)
+button bounds(100, 182, 20, 20) colour:0(118, 118, 118, 255) text("3") colour:1(255, 0, 0, 255) channel("btn3") radiogroup("btnumber") visible(0)
+button bounds(122, 182, 20, 20) colour:0(118, 118, 118, 255) text("4") colour:1(255, 0, 0, 255) channel("btn4") radiogroup("btnumber") visible(0)
+button bounds(144, 182, 20, 20) colour:0(118, 118, 118, 255) text("5") colour:1(255, 0, 0, 255) channel("btn5") radiogroup("btnumber") visible(0)
+button bounds(166, 182, 20, 20) colour:0(118, 118, 118, 255) text("6") colour:1(255, 0, 0, 255) channel("btn6") radiogroup("btnumber") visible(0)
+button bounds(188, 182, 20, 20) colour:0(118, 118, 118, 255) text("7") colour:1(255, 0, 0, 255) channel("btn7") radiogroup("btnumber") visible(0)
+button bounds(210, 182, 20, 20) colour:0(118, 118, 118, 255) text("8") colour:1(255, 0, 0, 255) channel("btn8") radiogroup("btnumber") visible(0)
 
 
-
-
-
-
-
-vslider bounds(10, 460, 47, 129) range(0, 1, 0.4, 1, 0.001) colour(149, 140, 140, 255) textboxoutlinecolour(0, 0, 0, 0) channel("volume") text("Volume") trackercolour(255, 0, 0, 255)
-button bounds(20, 418, 51, 31) channel("OctDown") colour:1(255, 0, 0, 255) text("Down") radiogroup("oct")
-button bounds(76, 418, 51, 31) channel("OctUp") text("Normal", "Normal") radiogroup("oct") colour:1(255, 0, 0, 255)
-
-label bounds(6, 382, 128, 16) text("OCT TRANSPOSE")
-
-label bounds(580, 276, 80, 16) text("VCF ENV")
-label bounds(486, 276, 80, 17) text("VCA ENV")
-rslider bounds(504, 316, 48, 48) range(0, 127, 0, 1, 1) channel("vcaenvd") text("VCA ENV")  trackercolour(200, 13, 13, 255) trackerinsideradius(0.71) outlinecolour(202, 25, 25, 255) markercolour(202, 25, 25, 255)
-
-
-
-
-label bounds(66, 86, 86, 19) text("Group") fontcolour(255, 0, 0, 255)
-button bounds(145, 95, 57, 2) colour:0(255, 0, 0, 255)  colour:1(255, 0, 0, 255) radiogroup("666")
-button bounds(15, 95, 57, 2) colour:0(255, 0, 0, 255) colour:1(255, 0, 0, 255) radiogroup("666")
-
-label bounds(5, 120, 73, 13) text("PRESET") 
-label bounds(76, 120, 73, 13) text("MEMORY")
-label bounds(148, 120, 73, 13) text("CARTIDGE")
-button bounds(34, 138, 19, 70) colour:0(118, 118, 118, 255) colour:1(255, 0, 0, 255) radiogroup("1") text("", "") channel("grpPreset") value(1)
-button bounds(102, 138, 19, 70) colour:0(118, 118, 118, 255) colour:1(255, 0, 0, 255) radiogroup("1") text("", "") channel("grpMemory")
-button bounds(170, 138, 19, 70) colour:0(118, 118, 118, 255) colour:1(255, 0, 0, 255) radiogroup("1") text("", "") channel("grpCartridge")
-
-label bounds(426, 376, 80, 16) text("CHORUS")
 </Cabbage>
 <CsoundSynthesizer>
 <CsOptions>
@@ -338,10 +371,26 @@ iLfoRate        chnget "lforate"
 iLfoDely        chnget "lfodely"  
 iPulse          chnget "pulse"
 iPulse          = iPulse - 1
+iPulse0         chnget "pulse0"
+iPulse1         chnget "pulse1"
+iPulse2         chnget "pulse2"
+iPulse3         chnget "pulse3"
 iSawtooth       chnget "sawtooth"
 iSawtooth       = iSawtooth - 1
+iSawtooth0      chnget "sawtooth0"
+iSawtooth1      chnget "sawtooth1"
+iSawtooth2      chnget "sawtooth2"
+iSawtooth3      chnget "sawtooth3"
+iSawtooth4      chnget "sawtooth4"
+iSawtooth5      chnget "sawtooth5"
 iSub            chnget "sub"
-iSub            = iSub - 1
+iSub             = iSub - 1
+iSub0           chnget "sub0"
+iSub1           chnget "sub1"
+iSub2           chnget "sub2"
+iSub3           chnget "sub3"
+iSub4           chnget "sub4"
+iSub5           chnget "sub5"
 iSubLvl         chnget "sublevl" 
 iSubLvl         = iSubLvl - 1
 kpwpwm          chnget "pwpwm"
@@ -358,6 +407,7 @@ iVcfFreq        chnget "vcffreq"
 iVcfReso        chnget "vcfreso" 
 iVcfEnvd        chnget "vcfenvd" 
 iVcfEnv         chnget "vcfenv" 
+iVcfKybd        chnget "vcfkybd"
 iVcfLfo         chnget "vcflfo" 
 iVcaEnvd        chnget "vcaenvd" 
 iVcaEnv         chnget "vcaenv" 
@@ -377,15 +427,6 @@ giMemory       chnget "grpMemory"
 giCartridge    chnget "grpCartridge"
 
 
-/*
-printf_i "P:%d M:%d C:%d\n", 1, giPreset       ,giMemory, giCartridge
-if (giPreset == 1) then
-    chnset "populate(\"*.snaps\", \"preset\")", "GroupTones"
-endif 
-if (giMemory == 1) then
-    chnset "populate(\"*.snaps\", \"memory\")", "GroupTones"
-endif 
-*/
 // ----------------------------------------------------------------------------------------------------------------
 // Envelopes 
 // ----------------------------------------------------------------------------------------------------------------
@@ -393,26 +434,11 @@ endif
     kEnvL linsegr  0, gienvt1[iEnvT1], iEnvL1/127, gienvt1[iEnvT2], iEnvL2/127, gienvt3[iEnvT3], iEnvL3/127, gienvt4[iEnvT4],0
     kEnvVCF linsegr  0, gienvt1[iEnvT1], iEnvL1, gienvt1[iEnvT2], iEnvL2 , gienvt3[iEnvT3], iEnvL3, gienvt4[iEnvT4],0
     kEnvG  linsegr 0, 0.0001, 1,0,0
-//else
-// kres linsegr ia, idur1, ib [, idur2] [, ic] [...], irel, iz
-//    kEnvL linsegr 0, gienvt1[iEnvT1], iEnvL1/127, gienvt1[iEnvT2], iEnvL2/127, gienvt3[iEnvT3], iEnvL3/127, gienvt4[iEnvT4],0
-//    kEnvVCF  linsegr 0, gienvt1[iEnvT1], iEnvL1, gienvt1[iEnvT2], iEnvL2, gienvt3[iEnvT3], iEnvL3, gienvt4[iEnvT4],0
-//endif 
-
-
-/*kMainL linsegr  0, gienvt1[iEnvT1], iEnvL1, gienvt1[iEnvT2], iEnvL2/127, gienvt3[iEnvT3], iEnvL3/127, gienvt4[iEnvT4],0
-kMainE expsegr  0.001, gienvt1[iEnvT1], iEnvL1 + 0.001, gienvt1[iEnvT2], iEnvL2 + 0.001 , gienvt3[iEnvT3], iEnvL3 + 0.001, gienvt4[iEnvT4],0.001
-kMainLG linsegr  1, gienvt1[iEnvT1] + gienvt1[iEnvT2], 1, 0, 0, gienvt3[iEnvT3], 0, gienvt4[iEnvT4],0
-*/
-
-//printf_i "iVcaEnvd:%d     \n",1,iVcaEnvd 
-
-
 
 
 
 // ----------------------------------------------------------------------------------------------------------------
-; LFO Block
+// LFO Block
 // ----------------------------------------------------------------------------------------------------------------
 
 if (iLfoDely > 10) then 
@@ -435,7 +461,7 @@ endif
 
 
 // ----------------------------------------------------------------------------------------------------------------
-; DCO Block
+// DCO Block
 // ----------------------------------------------------------------------------------------------------------------
 
 //printf_i "iDcoEnvd :%d   , gidcoenvb[iDcoEnvd]:%f  idcoenva[iDcoEnvd] :%f \n",1,iDcoEnvd,gidcoenvb[iDcoEnvd],gidcoenva[iDcoEnvd] 
@@ -467,61 +493,55 @@ endif
 
 
 ; -- Square part
-if (iPulse == 0) then 
+if (iPulse0 == 1) then 
     aOsc1 = 0
 else
     aOscTri vco2 p5, kNote,0,0,0,0.2
-    if (iPulse == 1) then
+    if (iPulse1 == 1) then
         aOsc1  vco2  p5, kNote,10,0,0,0.45  // Square 
-    elseif (iPulse == 2) then 
-        aOsc1   vco2  p5, kNote,2,0.75
-    elseif (iPulse == 3) then
-        aOsc1   vco2  p5, kNote ,2,  0.5 - (kLfoPw)*0.49/127  
-        aOsc1 = aOsc1  // + kLfoPw
+        aOsc1 = - aOsc1
+    elseif (iPulse2 == 1) then 
+        aOsc1   vco2  1, kNote,2,0.75
+        aOsc1 = (- aOsc1 + 0.5) * p5
+    elseif (iPulse3 == 1) then
+        aOsc1   vco2  1, kNote ,2,  0.5 - (kLfoPw)*0.49/127  
+        aOsc1 = (-aOsc1 - kLfoPw/127)* p5    // move amplitude to signal up according to pw  -  kLfoPw/127
     endif 
-    aOsc1 =  aOsc1 *(aOscTri + 3)/4     // the pulse wave is not really a square...
+    //aOsc1 =  aOsc1 *(aOscTri + 3)/4     // the pulse wave is not really a square...
 endif 
 
 
 
-
 ; -- Sawtooth part
-if (iSawtooth == 0) then 
+if (iSawtooth0 == 1) then 
     aOsc2  = 0
 else
-    aSaw1 vco2  p5, kNote ,0
+    aSaw1 vco2  1, kNote ,0
     
-    if (iSawtooth == 1) then
-        aOsc2           = - aSaw1  
-    elseif (iSawtooth  == 2) then
-        aSquare1x2      vco2  p5, kNote*2,10     // note / 2  
-        aSquare1x201    =   (-aSquare1x2  + 1) / 2    // Gate for Sawtooth waves 
-        aOsc2           = (-aSaw1+1) * aSquare1x201    -1   
+    if (iSawtooth1 == 1) then
+        aOsc2           = - aSaw1 * p5 
+    elseif (iSawtooth2  == 1) then
+        aSquare1x2      vco2  1,kNote * 2, 10     // note * 2  
+        aOsc2           = ((- aSaw1 + 1)  * (- aSquare1x2  + 1) / 4  - 0.33) * p5
 
-    elseif (iSawtooth == 3) then
-        asquarepwm      vco2  p5, kNote * 2, 2 ,  0.5 - (kLfoPw)*0.49/127  
-        aSquare1x201    =   (-asquarepwm + 1) / 2
-        aSaw1           vco2  p5, kNote ,0
-        aOsc2           = (-aSaw1 + 1) * (aSquare1x201)        -1    // saw03
+    elseif (iSawtooth3 == 1) then
+        asquarepwm      vco2  1, kNote * 2, 2 ,  0.5 - (kLfoPw)*0.49/127  
+        aOsc2           = ((- aSaw1 + 1) * (- asquarepwm + 1) / 2 - 0.33) * p5    // saw03
     
-    elseif (iSawtooth == 4) then
-        aSaw4           vco2  p5, kNote ,0
-        asquare         vco2  p5, kNote * 8, 10, 0.5, 0.5
-        aSquare201      =   (asquare  + 1) / 2    // Gate for Sawtooth waves 
-        aOsc2           = (-aSaw4 + 1) * (aSquare201)        -1    // saw04
+    elseif (iSawtooth4 == 1) then
+        asquare         vco2  1, kNote * 8, 10, 0.5, 0.5  // Gate for Sawtooth waves 
+        aOsc2           = ((-aSaw1 + 1) * (-asquare  + 1) - 0.75) * p5  // saw04
 
-    elseif (iSawtooth == 5) then
-        aSaw4           vco2  p5, kNote ,0
-        aSquared2       vco2  p5, kNote*2,10     // note / 2  
-        asquared8       vco2  p5, kNote* 8, 10, 0.5, 0.5  // note / 8
+    elseif (iSawtooth5 == 1) then
+        aSquared2       vco2  1, kNote*2,10     // note / 2  
+        asquared8       vco2  1, kNote* 8, 10, 0.5, 0.5  // note / 8
         aSquare1x201    =   (- aSquared2     + 1) / 2    // Gate for Sawtooth waves 
         aSquare201      =   (asquared8 + 1) / 2    // Gate for Sawtooth waves 
-        aOsc2           = (-aSaw4 + 1) * (aSquare201) * aSquare1x201        -1    // saw04
+        aOsc2           = ((-aSaw1 + 1) * (aSquare201) * aSquare1x201        -0.25) * p5   // saw04
     endif 
 endif
 
 ; -- Sub part
-
 if (iSubLvl == 0) then 
     kSubLevel = 0
 else
@@ -529,30 +549,35 @@ else
 endif
 
 
-if (iSub == 0) then 
-    aOsc3   vco2,  p5 * kSubLevel, kNote/2,10
+if (kSubLevel != 0) then 
+    if (iSub0 == 1) then 
+        aOsc3   vco2,  p5 * kSubLevel, kNote/2,10
+        aOsc3 = -aOsc3
 
-elseif (iSub == 1) then
-    aOsc3   vco2  p5 * kSubLevel, kNote/2 ,2,0.75
+    elseif (iSub1 == 1) then
+        aOsc3   vco2  p5 * kSubLevel, kNote/2 ,2,0.75
+        aOsc3 = - aOsc3
 
-elseif (iSub == 2) then
-   aSub1 vco2  p5* kSubLevel, kNote*2 ,10
-   aSub2 vco2  p5* kSubLevel, kNote/2 ,10
-   aOsc3   =  (- aSub1 + 1) * (-aSub2 + 1) / 2 - 1
+    elseif (iSub2 == 1) then
+       aSub1 vco2  1, kNote*2 ,10
+       aSub2 vco2  1, kNote/2 ,10
+       aOsc3   =   ((- aSub2 + 1) * (-aSub1 + 1) / 2 - 0.5) * p5 * kSubLevel // signal is not fully symetric to 0 (0.5 shift)
 
-elseif (iSub == 3) then
-   aSub1 vco2  p5* kSubLevel, kNote*4 ,10
-   aSub2 vco2  p5* kSubLevel, kNote/2 ,10
-   aOsc3   =  (- aSub1 + 1) * (-aSub2 + 1) / 2 - 1
+    elseif (iSub3 == 1) then
+       aSub1 vco2  1, kNote*4 ,10
+       aSub2 vco2  1, kNote/2 ,10
+       aOsc3   =  ((- aSub2 + 1) * (-aSub1 + 1) / 2 - 0.5)  * p5* kSubLevel
 
-elseif (iSub == 4) then
-    aOsc3   vco2,  p5 * kSubLevel, kNote/4,10
+    elseif (iSub4 == 1) then
+        aOsc3   vco2,  p5 * kSubLevel, kNote/4,10
+        aOsc3 = - aOsc3
 
-elseif (iSub == 5) then
-    aOsc3   vco2  p5 * kSubLevel, kNote/4 ,2,0.75
+    elseif (iSub5 == 1) then
+        aOsc3   vco2  p5 * kSubLevel, kNote/4 ,2,0.75
+        a0sc3 = -aOsc3 + 0.5
 
+    endif 
 endif 
-
 
 ; -- Noise part
 if (iNoisLvl == 0) then 
@@ -566,28 +591,30 @@ aOsc4   noise p5 * iNoisLvl / 3, -0.9
 aOutVcoblock    =  aOsc1 * giAmp + aOsc2* giAmp + aOsc3 * giAmp + aOsc4 * giAmp
 
 
+// eq : pareq 0.7071067812
+
+ktestfreq chnget "testfreq"
+ktestboost chnget "testboost"
+
 
 // ----------------------------------------------------------------------------------------------------------------
-; HPF Block
+// HPF Block
 // ----------------------------------------------------------------------------------------------------------------
+
+
 if (iHpfFreq == 0) then
-    aOutHPFBlock        mvclpf1 aOutVcoblock ,8000,0
+    aOutHPFBlock        pareq aOutVcoblock,106, 2, 0.7071067812
 elseif (iHpfFreq == 1) then
     aOutHPFBlock        = aOutVcoblock    
 elseif (iHpfFreq == 2) then
-    aOutHPFBlock        mvchpf aOutVcoblock ,312
+    aOutHPFBlock        mvchpf aOutVcoblock,124
 elseif (iHpfFreq == 3) then
-    aOutHPFBlock        mvchpf aOutVcoblock ,1000
+    aOutHPFBlock        mvchpf aOutVcoblock ,220
 endif
 
 
-
-
-
-
-
 // ----------------------------------------------------------------------------------------------------------------
-; VCA  VCF Block
+// VCA  VCF Block
 // ----------------------------------------------------------------------------------------------------------------
 
 ;printf_i "courbe : %f %f %f %f %f %f %f \n",1, gienvt1[iEnvT1], iEnvL1/127, gienvt1[iEnvT2]*(iEnvL1-iEnvL2)/127, iEnvL2/127, gienvt1[iEnvT3], iEnvL3/127, gienvt1[iEnvT4]
@@ -602,58 +629,60 @@ elseif (iVcaEnv == 4) then
     kEnv = 1   // DGT  TODO : implement dynamic
 endif
 
-printf_i "iVcfLfo:%d     \n", 1, iVcfLfo
 
-//aOutVCFBlock moogvcf aOutHPFBlock, givcffreq[min(iVcfFreq + iVcfEnvd * kEnv/8, 127)]*1.1 , iVcfReso/145
+//printf_i "iVcfLfo:%d     \n", 1, iVcfLfo
+// =round(D17+10*log(B17/130.81,2)*C17/15) 
+printf_i "note:%d iVcfKybd:%d  targetTab:%d\n", 1, p4,iVcfKybd, iVcfFreq  + round(10 * log2(p4 / 130.71 ) * iVcfKybd / 15)
 
+
+kVcfFeq = iVcfFreq + round(10 * log2(kNote / 130.81) * iVcfKybd / 15)
 if (iVcfEnv == 1) then       // Normal
-    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[min(iVcfFreq + iVcfEnvd * kEnvVCF / 256, 127)] , iVcfReso/153
+    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[min(kVcfFeq + iVcfEnvd * kEnvVCF / 256, 127)], iVcfReso/153
 elseif (iVcfEnv == 2) then   // Inverted
-    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[min(iVcfFreq - iVcfEnvd * kEnvVCF / 256, 127)]    , iVcfReso/153
+    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[min(kVcfFeq - iVcfEnvd * kEnvVCF / 256, 127)]    , iVcfReso/153
 elseif (iVcfEnv == 3) then   // D-Norm
     // no dynamic for now
-    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[min(iVcfFreq + iVcfEnvd * kEnvVCF / 256, 127)]   , iVcfReso/153
+    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[min(kVcfFeq + iVcfEnvd * kEnvVCF / 256, 127)]   , iVcfReso/153
 elseif (iVcfEnv == 4) then   // dyn
-    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[iVcfFreq]    , iVcfReso/153
+    aOutVCFBlock moogvcf aOutHPFBlock        , (1 + aLFO * iVcfLfo/127  ) * givcffreq[kVcfFeq]    , iVcfReso/153
 endif
 
 
 
-// -----------
-// adjustement filter
-// -----------
+// ----------------------------------------------------------------------------------------------------------------
+// adjustement filter & offset
+// ----------------------------------------------------------------------------------------------------------------
 aoutPostFilter butterlp aOutVCFBlock , 9220   
 //aoutPostFilter  = aOutVCFBlock 
 
+
+// DC Offset
+adc dcblock2 aoutPostFilter  
+
+
+
 // ----------------------------------------------------------------------------------------------------------------
-; Output
+// Chorus block
 // ----------------------------------------------------------------------------------------------------------------
-/*
-// Test chorus
-kampTemp = 2/kNote 
-a2   lfo kampTemp , 0.4, 1                           // Rate for LFO 
-
-asig vdelay aoutPostFilter  , a2   , 120	;use the LFO to control delay time
-outs        (asig) * kEnv, (asig)  * kEnv 
-
-// rate : ok dereg : 0 depth 1 offset 0.1 width 1 mix 0.5 level 1
-a1,a2	StChorus	a1,a2,krate*octave(kdereg),kdepth*ktrem,aoffset,kwidth,kmix
-*/
-
 if (iChorus == 2) then 
-    printf_i "Chorus ! \n",1
     krate = gicrsrate[iCrsRate]
     aoffset = 0
     ktrem	rspline	0,-1,0.1,0.5
     ktrem	pow	2,ktrem
     
-    aoutChorusL,aoutChorusR 	StChorus	aoutPostFilter  ,aoutPostFilter  , gicrsrate[iCrsRate], ktrem/2	, aoffset, 0.5, 0.5
+    aoutChorusL,aoutChorusR 	StChorus	adc  ,adc , gicrsrate[iCrsRate], ktrem/2	, aoffset, 0.5, 0.5
 else
     aoutChorusL = aoutPostFilter
     aoutChorusR = aoutPostFilter
 endif 
 
+
+// ----------------------------------------------------------------------------------------------------------------
+// Output
+// ----------------------------------------------------------------------------------------------------------------
 outs        aoutChorusL  * kEnv, aoutChorusR  * kEnv 
+//test 
+//outs        aOutVcoblock    * kEnv, aOutVcoblock    * kEnv  
   
 endin
   
@@ -666,3 +695,4 @@ f0 z
 
 </CsScore>
 </CsoundSynthesizer>
+ 
